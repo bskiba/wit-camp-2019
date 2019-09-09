@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: web-shop
+  name: web-shop
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: web-shop
+  template:
+    metadata:
+      labels:
+        app: web-shop
+    spec:
+      containers:
+      - image: gcr.io/wit-camp-2019/web-shop:v0.0.1
+        name: web-shop
+        ports:
+        - containerPort: 8013
+        resources:
+          requests:
+            cpu: 200m
