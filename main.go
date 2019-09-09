@@ -23,6 +23,8 @@ var (
 )
 
 func main() {
+	log.Println(fmt.Printf("Starting to listen on port %d", *port))
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Hello from Kubernetes Basics Workshop!\nWelcome to the <insert name here> shop!\n")
 	})
